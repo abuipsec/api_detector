@@ -66,3 +66,13 @@ The setup_logger method configures the logger with a file handler, sets the log 
 The log_detected_api method logs detected API communication to the specified log file.
 The get_log_file_path method returns the path to the log file.
 This is a basic example, and you can customize it based on your specific requirements. Remember to add error handling, adjust log levels, and enhance the functionality according to your project needs.
+
+************************
+/tests/test_api_detector.py
+This test file includes three test cases:
+
+test_detect_api_with_match: Tests whether the detect_api method prints "API Detected!" when there is a match in the traffic data.
+test_detect_api_without_match: Tests whether the detect_api method prints "No API detected" when there is no match in the traffic data.
+test_get_detected_apis: Tests whether the get_detected_apis method returns the correct list of detected APIs.
+In each test case, the unittest.mock.patch is used to replace the print function temporarily, allowing us to capture and assert on the printed output. Note that the __main__ block allows the test file to be executed directly using python -m unittest tests.test_api_detector.
+****************
